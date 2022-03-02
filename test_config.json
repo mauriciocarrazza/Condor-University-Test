@@ -2,11 +2,11 @@
   "platforms": [
     {
       "name": "googlesheets",
-      "credentials": "../../.secrets/googlesheets.json"
+      "credentials": "../.secrets/googlesheets.json"
     },
     {
       "name": "bigquery",
-      "credentials": "../../.secrets/condorclients-13a4e2ba7349.json"
+      "credentials": "../.secrets/condorclients-13a4e2ba7349.json"
     },
     {
       "name": "hubspot_email",
