@@ -7,28 +7,10 @@
     {
       "name": "bigquery",
       "credentials": "../.secrets/condorclients-13a4e2ba7349.json"
-    },
-    {
-      "name": "hubspot_email",
-      "credentials": "../../.secrets/hubspot_auxis.json"
-    },
-    {
-      "name": "send_in_blue",
-      "credentials":"../../.secrets/send_in_blue.json"
-    },
-    {
-      "name": "SearchConsole",
-      "credentials":"../../.secrets/client_secrets_Search_Console.json"
     }
   ],
   "sources": {
-    "send_in_blue": {
-      "tables": [
-        {
-          "id": "0"
-        } 
-      ]
-    }, "googlesheets": {
+    "googlesheets": {
       "tables": [
         {
           "id": "1",
@@ -44,15 +26,6 @@
     }
 },
 "destinations":{
-  "googlesheets": {
-    "tables": [
-      {
-        "id": "0",
-        "sheet_id": "1hJ5-Kk2GFBxDqWGLPJ04cttQ4U824L59l5u6zhnN6Tg",
-        "sheet_range": "Revenue Attribution!A:AAA"
-      }
-    ]
-  },
   "bigquery": {
     "tables": [
       {
