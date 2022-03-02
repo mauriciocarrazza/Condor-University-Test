@@ -56,7 +56,7 @@
     }
 ], 
 "slack": {
-    "credentials": "../../.secrets/slack_CondorClientsApp.json",
+    "credentials": "../.secrets/slack_CondorClientsApp.json",
     "log_channel_id": "C01EK40JYL8",
     "final_notice_channel_id": "G01LR5LPUD6",
     "activate": true,
