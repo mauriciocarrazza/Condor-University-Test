@@ -1,0 +1,93 @@
+{
+  "platforms": [
+    {
+      "name": "googlesheets",
+      "credentials": "../../.secrets/googlesheets.json"
+    },
+    {
+      "name": "bigquery",
+      "credentials": "../../.secrets/condorclients-13a4e2ba7349.json"
+    },
+    {
+      "name": "hubspot_email",
+      "credentials": "../../.secrets/hubspot_auxis.json"
+    },
+    {
+      "name": "send_in_blue",
+      "credentials":"../../.secrets/send_in_blue.json"
+    },
+    {
+      "name": "SearchConsole",
+      "credentials":"../../.secrets/client_secrets_Search_Console.json"
+    }
+  ],
+  "sources": {
+    "send_in_blue": {
+      "tables": [
+        {
+          "id": "0"
+        } 
+      ]
+    }, "googlesheets": {
+      "tables": [
+        {
+          "id": "1",
+          "sheet_id": "1MlgapII4ML37OwwQa0krc5ZZh47eX9EjDtjsRxMNhiQ",
+          "sheet_range": "Contact Information!A:E"
+        },
+        {
+          "id": "2",
+          "sheet_id": "1MlgapII4ML37OwwQa0krc5ZZh47eX9EjDtjsRxMNhiQ",
+          "sheet_range": "Metrics By ID!A:F"
+        }
+      ]
+    }
+},
+"destinations":{
+  "googlesheets": {
+    "tables": [
+      {
+        "id": "0",
+        "sheet_id": "1hJ5-Kk2GFBxDqWGLPJ04cttQ4U824L59l5u6zhnN6Tg",
+        "sheet_range": "Revenue Attribution!A:AAA"
+      }
+    ]
+  },
+  "bigquery": {
+    "tables": [
+      {
+        "id": "1",
+        "project_id": "condorclients",
+        "dataset_id": "Condor_University",
+        "table": "Contact_Information"
+      },
+      {
+        "id": "2",
+        "project_id": "condorclients",
+        "dataset_id": "Condor_University",
+        "table": "Metrics_By_ID"
+      }
+    ]
+  }
+},
+"transfers": [
+    {
+      "source_id": ["1"],
+      "destination_id": ["1"],                   
+      "verbose_name": "Contact Information transfered"
+    },
+    {
+      "source_id": ["2"],
+      "destination_id": ["2"],                   
+      "verbose_name": "Metrtics by ID transfered" 
+    }
+], 
+"slack": {
+    "credentials": "../../.secrets/slack_CondorClientsApp.json",
+    "log_channel_id": "C01EK40JYL8",
+    "final_notice_channel_id": "G01LR5LPUD6",
+    "activate": true,
+    "start_msg": "test Report Start",
+    "final_msg": "Test Report End"
+} 
+}
